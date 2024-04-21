@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/add_black_24dp.svg</file>
+        <file>icons/add_task_black_24dp.svg</file>
+        <file>icons/arrow_back_ios_black_24dp.svg</file>
+        <file>icons/arrow_forward_ios_black_24dp.svg</file>
+        <file>icons/calendar_month_black_24dp.svg</file>
+        <file>icons/list_black_24dp.svg</file>
+        <file>icons/search_black_24dp.svg</file>
+        <file>icons/trending_up_black_24dp.svg</file>
+        <file>icons/highlight_off_black_24dp.svg</file>
+        <file>icons/bookmark_24.svg</file>
+    </qresource>
+</RCC>

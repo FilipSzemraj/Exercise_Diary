@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>adding_new_exercise</class>
+ <widget class="QDialog" name="adding_new_exercise">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dodawanie nowego ćwiczenia</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icons/add_task_black_24dp.svg</normaloff>:/icons/add_task_black_24dp.svg</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2" stretch="8,1">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,6">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,2">
+         <item>
+          <widget class="QLabel" name="NameExL">
+           <property name="text">
+            <string>Nazwa cwiczenia</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="NameE"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,2">
+         <item>
+          <widget class="QLabel" name="GroupL">
+           <property name="text">
+            <string>Grupa</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="GroupExCB"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="DescL">
+           <property name="text">
+            <string>Opis do cwiczenia</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPlainTextEdit" name="DescPT"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QPushButton" name="Add_new_gr_B">
+         <property name="text">
+          <string>Dodaj nową grupę</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Add_new_ex_B">
+         <property name="text">
+          <string>Dodaj nowe ćwiczenie</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="DeclineB">
+         <property name="text">
+          <string>Anuluj</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

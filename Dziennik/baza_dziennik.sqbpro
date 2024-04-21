@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Projekty_CODEBLOCKS/Nowy folder/projekt_c++/baza_dziennik.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1588"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:maincalendar"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="calendar" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="51"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="training_day" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="57"/><column index="2" value="56"/><column index="3" value="51"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE training_day
+(
+id_training_day INTEGER PRIMARY KEY,
+id_user INTEGER,
+d DATE,
+FOREIGN KEY (id_user) REFERENCES user(id_user),
+FOREIGN KEY (d) REFERENCES calendar(d)
+);
+
+
+CREATE TABLE exercise_training_day
+(
+id_exercise INTEGER, 
+id_training_day INTEGER,
+reps INTEGER NOT NULL,
+weight INTEGER,
+FOREIGN KEY (id_exercise) REFERENCES exercises_set(id_exercise),
+FOREIGN KEY (id_training_day) REFERENCES training_day(id_training_day)
+);
+
+INSERT INTO training_day VALUES
+(1, 1, '2023-01-01');
+INSERT INTO training_day VALUES
+(2, 2, '2023-01-01');
+INSERT INTO training_day VALUES
+(3, 3, '2023-01-01');
+
+INSERT INTO exercise_training_day VALUES
+(1, 1, 10, 200);
+INSERT INTO exercise_training_day VALUES
+(1, 1, 8, 200);
+INSERT INTO exercise_training_day VALUES
+(1, 1, 4, 260);
+INSERT INTO exercise_training_day VALUES
+(2, 1, 10, 180);
+INSERT INTO exercise_training_day VALUES
+(3, 1, 10, 120);
+
+INSERT INTO exercise_training_day VALUES
+(1, 2, 10, 200);
+INSERT INTO exercise_training_day VALUES
+(1, 2, 8, 200);
+INSERT INTO exercise_training_day VALUES
+(1, 2, 4, 260);
+INSERT INTO exercise_training_day VALUES
+(2, 2, 10, 180);
+INSERT INTO exercise_training_day VALUES
+(3, 2, 10, 120);
+
+
+
+SELECT e.name, u.name, et.reps, et.weight
+FROM training_day td
+JOIN exercise_training_day et ON et.id_training_day = td.id_training_day
+JOIN exercises_set e ON e.id_exercise = et.id_exercise
+JOIN user u ON u.id_user = td.id_user
+WHERE u.id_user = 1 AND td.d = '2023-01-01'
+ORDER BY e.name;
+
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
